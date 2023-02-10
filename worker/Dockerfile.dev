@@ -1,0 +1,9 @@
+FROM node:14.14.0-alpine
+WORKDIR /app
+# Install dependencies
+COPY package.json ./
+RUN npm install
+# Copy source code
+COPY ./ ./
+# Start the app
+CMD ["npm", "run", "dev"]
